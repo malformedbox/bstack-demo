@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Create Tests: Priority 1" data-provider-thread-count="1">
+    <test name="Create" parallel="methods" thread-count="100">
+        <packages>
+            <package name="tests2.OC.create.communitytype.*"/>
+            <package name="tests2.OC.create.email.*"/>
+            <package name="tests2.OC.create.admin.*">
+                <exclude name="tests2.OC.create.admin.email.*"/>
+                <exclude name="tests2.OC.create.admin.tools.automationrules"/>
+                <exclude name="tests2.OC.create.admin.membership.*"/>
+                <exclude name="tests2.OC.create.admin.communities.discussions.anonymous.*"/>
+                <exclude name="tests2.OC.create.admin.reports"/>
+            </package>
+        </packages>
+    </test> <!-- Test -->
+    <test name="Create Opportunity Types" parallel="methods" thread-count="100">
+        <packages>
+            <package name="tests2.OC.create.opportunitytype.*"/>
+        </packages>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->

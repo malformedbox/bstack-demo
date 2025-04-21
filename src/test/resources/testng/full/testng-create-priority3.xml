@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Create Tests: Priority 3" data-provider-thread-count="1">
+    <test name="Create" parallel="methods" thread-count="100">
+        <packages>
+            <package name="tests2.OC.create.library.*"/>
+            <package name="tests2.OC.create.blog.*"/>
+            <package name="tests2.OC.create.event.*">
+                <exclude name="tests2.OC.create.event.copy"/>
+            </package>
+            <package name="tests2.OC.create.associationmodel.*"/>
+            <package name="tests2.OC.create.cms.*"/>
+            <package name="tests2.OC.API.*"/>
+        </packages>
+        <classes>
+            <class name="tests2.OC.create.community.SubCommunity"/>
+        </classes>
+    </test> <!-- Test -->
+    <test name="Create Ideation" parallel="methods" thread-count="100">
+        <packages>
+            <package name="tests2.OC.create.ideation.IdeationHome"/>
+        </packages>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->

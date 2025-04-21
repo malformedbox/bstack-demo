@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Delete Tests: Priority 1" data-provider-thread-count="1">
+    <test name="Delete" parallel="methods" thread-count="15">
+        <classes>
+            <class name="tests2.smoke.production.view.admin.Verification"/>
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Update Tests" data-provider-thread-count="1">
+    <test name="Update" parallel="methods" thread-count="100">
+        <packages>
+            <package name="tests2.OC.update.*"/>
+               <exclude name="tests2.OC.update.membership.*"/>
+        </packages>
+    </test>
+</suite> <!-- Suite -->

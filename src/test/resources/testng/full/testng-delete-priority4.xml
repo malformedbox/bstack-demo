@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Delete Tests: Priority 4" data-provider-thread-count="1">
+    <test name="Delete" parallel="methods" thread-count="100">
+        <packages>
+            <package name="tests2.OC.delete.community.*">
+                <exclude name="tests2.OC.delete.community.tags"/>
+            </package>
+        </packages>
+        <classes>
+            <class name="tests2.OC.delete.admin.tools.tagging.RemoveTagGroups"/>
+            <class name="tests2.OC.delete.admin.tools.tagging.RestrictedTags"/>
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->

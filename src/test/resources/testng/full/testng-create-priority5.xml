@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Create Tests: Priority 5" data-provider-thread-count="1">
+    <test name="Create" parallel="methods" thread-count="100">
+        <packages>
+            <package name="tests2.OC.create.reply.*"/>
+            <package name="tests2.OC.create.admin.tools.automationrules"/>
+            <package name="tests2.OC.create.mention"/>
+            <package name="tests2.OC.create.questionsanswers.answer.*"/>
+        </packages>
+        <classes>
+            <class name="tests2.OC.create.volunteer.copy.Copy"/>
+            <class name="tests2.OC.create.admin.reports.Schedules"/>
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->

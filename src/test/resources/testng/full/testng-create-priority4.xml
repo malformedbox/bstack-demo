@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Create Tests: Priority 4" data-provider-thread-count="1">
+    <test name="Create" parallel="methods" thread-count="100">
+        <packages>
+            <package name="tests2.OC.create.discussion.*">
+                <exclude name="tests2.OC.create.discussion.thrive.*"/>
+            </package>
+            <package name="tests2.OC.create.adbuilder.*"/>
+            <package name="tests2.OC.create.questionsanswers.question.*"/>
+            <package name="tests2.OC.create.volunteer.*">
+                <exclude name="tests2.OC.create.volunteer.copy"/>
+            </package>
+            <package name="tests2.OC.create.event.copy.*"/>
+            <package name="tests2.OC.create.widgets.*"/>
+        </packages>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->

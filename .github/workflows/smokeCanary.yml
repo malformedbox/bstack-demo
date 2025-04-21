@@ -1,0 +1,73 @@
+name: Smoke - Canary
+run-name: 'Canary #${{ github.run_number }}'
+
+on:
+  workflow_dispatch:
+    inputs:
+  workflow_call:
+
+jobs:
+  run-tests:
+    runs-on: ubuntu-latest
+
+    permissions:
+      id-token: write
+      contents: write
+      statuses: write
+
+    steps:
+      - name: 'BrowserStack Env Setup'
+        uses: browserstack/github-actions/setup-env@master
+        with:
+          username: ${{ secrets.BSUSERNAME }}
+          access-key: ${{ secrets.BSACCESSKEY }}
+          build-name: nightlyautomation01242589
+          project-name: browserstack-demo
+
+      - name: 'BrowserStack Local Tunnel Setup'
+        uses: browserstack/github-actions/setup-local@master
+        with:
+          local-testing: start
+          local-identifier: random
+
+      #Check out test automation code
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          repository: jprany/bstack-demo
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Cache Maven dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: "8"
+          distribution: "adopt"
+
+      #Test Platform is set to AWS, unless workflow is manually triggered
+      - name: Run tests
+        run: |
+          mvn -B package --file pom.xml \
+            -DsuiteType=smoke/production/nightly \
+            -DsuiteXmlFile="testng-production-nightly-smoke-scurd.xml" \
+            -DdomainRoot=nightlyautomation \
+            -Dcodebase=PROD \
+            -DbuildNumber=123 \
+            -DtestPlatform=BS \
+            -DrunMode=PROD \
+            -DAWS_ACCESS_KEY_ID=${{ secrets.QA_AWS_ACCESS_KEY_ID }} \
+            -DAWS_SECRET_ACCESS_KEY=${{ secrets.QA_AWS_SECRET_ACCESS_KEY }} \
+            -DbsUsername=${{ secrets.BSUSERNAME }} \
+            -DbsAccessKey=${{ secrets.BSACCESSKEY }} \
+
+      - name: 'BrowserStackLocal Stop'
+        uses: browserstack/github-actions/setup-local@master
+        with:
+          local-testing: stop

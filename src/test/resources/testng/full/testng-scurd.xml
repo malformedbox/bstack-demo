@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SC Tests">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="browserVersion" value="latest"/>
+    <parameter name="os" value="windows"/>
+    <parameter name="osVersion" value="10"/>
+    <suite-files>
+        <suite-file path="testng-scurd1.xml"/>
+<!--        <suite-file path="testng-scurd2.xml"/>-->
+<!--        <suite-file path="testng-scurd3.xml"/>-->
+    </suite-files>
+</suite> <!-- Suite -->

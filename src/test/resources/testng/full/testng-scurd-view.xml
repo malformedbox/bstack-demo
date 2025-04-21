@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="View Tests" data-provider-thread-count="1">
+    <test name="View" parallel="methods" thread-count="100">
+        <packages>
+            <package name="tests2.OC.view.*">
+                <exclude name="tests2.OC.view.membership.*"/>
+            </package>
+        </packages>
+    </test>
+</suite> <!-- Suite -->

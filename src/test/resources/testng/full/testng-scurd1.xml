@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="SC Tests">
+    <parameter name="browser" value="chrome"/>
+    <parameter name="browserVersion" value="latest"/>
+    <parameter name="os" value="windows"/>
+    <parameter name="osVersion" value="10"/>
+    <suite-files>
+<!--        REMOVE THIS LATER-->
+        <suite-file path="testng-scurd-pendo.xml"/>
+<!--        <suite-file path="testng-scurd-settings.xml"/>-->
+<!--        <suite-file path="testng-scurd-create.xml"/>-->
+    </suite-files>
+</suite> <!-- Suite -->

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Delete Tests: Priority 2" data-provider-thread-count="1">
+    <test name="Delete" parallel="methods" thread-count="100">
+        <packages>
+            <package name="tests2.OC.delete.discussion.*">
+                <exclude name="tests2.OC.delete.discussion.tags"/>
+            </package>
+            <package name="tests2.OC.delete.library.*">
+                <exclude name="tests2.OC.delete.library.tags"/>
+            </package>
+            <package name="tests2.OC.delete.blog.*">
+                <exclude name="tests2.OC.delete.blog.tags"/>
+            </package>
+            <package name="tests2.OC.delete.volunteer.*">
+                <exclude name="tests2.OC.delete.volunteer.tags"/>
+            </package>
+            <package name="tests2.OC.delete.community.tags.*"/>
+            <package name="tests2.OC.delete.event.tags"/>
+        </packages>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->
