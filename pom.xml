@@ -177,7 +177,7 @@
                     <testFailureIgnore>false</testFailureIgnore>
                     <argLine>
                         -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar
-                        -javaagent:${settings.localRepository}/com/browserstack/browserstack-java-sdk/1.30.8/browserstack-java-sdk-1.30.8.jar
+<!--                        -javaagent:${settings.localRepository}/com/browserstack/browserstack-java-sdk/1.30.8/browserstack-java-sdk-1.30.8.jar-->
                     </argLine>
                     <systemPropertyVariables>
                         <codebase>${codebase}</codebase>
