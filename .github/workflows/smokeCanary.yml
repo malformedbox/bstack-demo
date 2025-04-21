@@ -22,7 +22,7 @@ jobs:
           username: ${{ secrets.BSUSERNAME }}
           access-key: ${{ secrets.BSACCESSKEY }}
           build-name: nightlyautomation01242589
-          project-name: browserstack-demo
+          project-name: bstack-demo
 
       - name: 'BrowserStack Local Tunnel Setup'
         uses: browserstack/github-actions/setup-local@master
@@ -34,7 +34,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
-          repository: jprany/bstack-demo
+          repository: malformedbox/bstack-demo
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Cache Maven dependencies
