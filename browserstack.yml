@@ -1,0 +1,38 @@
+userName: ${bsUsername}
+accessKey: ${bsAccessKey}
+framework: testng
+platform:
+  - os: Windows
+    osVersion: 11
+    browserName: Chrome
+    browserVersion: latest
+    chromeOptions:
+      args:
+        - --credentials_enable_service=false
+        - --start-maximized
+        - --disable-infobars
+        - --no-sandbox
+        - --disable-dev-shm-usage
+parallelsPerPlatform: 32
+resolution: 1920x1080
+
+projectName: bstack-demo
+buildName: ${domainRoot}${buildNumber}
+buildIdentifier: null
+testContextOptions:
+  skipSessionName: true
+  skipSessionStatus: false
+browserstackLocal: true
+browserStackLocalOptions:
+  localIdentifier: browserstack_local_identifier
+
+seleniumVersion: 4.7.2
+
+testObservability: false
+turboScale: false
+selfHeal: true
+
+networkLogs: true
+consoleLogs: info
+
+source: testng:intellij:v1.1.4
